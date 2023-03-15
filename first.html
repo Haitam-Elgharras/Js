@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Js</title>
+</head>
+<body>
+
+<h2>Demo JavaScript in Head</h2>
+
+<p id="demo">A Paragraph.</p>
+
+<!-- new way  -->
+  <button onmouseover="myf()">The time is?</button>
+  <script>
+    function myf(){
+      document.getElementById('demo4').innerHTML=Date();
+    }
+  </script>
+  <p id="demo4"></p>
+  
+
+<pre id="demo1">
+
+</pre>
+<pre id="demo3">
+
+</pre>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+</body>
+<script>
+  function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed.";
+   // document.write("haitam"); if we write this , when we will click try it all the page delete and print haitam
+   window.alert("enjoy this page");
+  }
+  let a ,b  ;
+a=5 ;
+b=10 ;
+  </script>
+  
+  <script>
+    let x = 5;
+    let y = 6;
+    let z = x + y;
+    document.getElementById("demo1").innerHTML =
+    "The value of z is: " + z;
+    </script>
+    <h2>JavaScript const</h2>
+
+    <p>Declaring a constant object does NOT make the objects properties unchangeable:</p>
+    
+    <p id="demo"></p>
+    
+
+    <script>
+    // Create an object:
+    const car = {type:"Fiat", model:"500", color:"white"};
+    
+    // Change a property:
+    car.color = "red";
+    
+    // Add a property:
+    car.owner = "haitam";
+    
+    // Display the property:
+    document.getElementById("demo3").innerHTML ="car type is" +" "+ car.type + " "+ "Car owner is " + car.owner; 
+    </script>
+</html> 

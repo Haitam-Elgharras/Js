@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "author": "John Smith",
+    "category": "Technology",
+    "title": "How to Code in JavaScript",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec augue enim. Nullam venenatis, mi nec commodo dignissim, ipsum ex sodales lacus, sed tempor nunc eros eget massa. Nam malesuada lectus id tortor ultrices, eget fringilla neque consectetur. Sed at bibendum turpis. Donec pulvinar auctor arcu, nec suscipit sem."
+  },
+  {
+    "id": 2,
+    "author": "Jane Doe",
+    "category": "Travel",
+    "title": "10 Best Places to Visit in Europe",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec augue enim. Nullam venenatis, mi nec commodo dignissim, ipsum ex sodales lacus, sed tempor nunc eros eget massa. Nam malesuada lectus id tortor ultrices, eget fringilla neque consectetur. Sed at bibendum turpis. Donec pulvinar auctor arcu, nec suscipit sem."
+  },
+  {
+    "id": 3,
+    "author": "Bob Smith",
+    "category": "Business",
+    "title": "How to Start a Small Business",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec augue enim. Nullam venenatis, mi nec commodo dignissim, ipsum ex sodales lacus, sed tempor nunc eros eget massa. Nam malesuada lectus id tortor ultrices, eget fringilla neque consectetur. Sed at bibendum turpis. Donec pulvinar auctor arcu, nec suscipit sem."
+  },
+  {
+    "id": 4,
+    "author": "Alice Green",
+    "category": "Food",
+    "title": "10 Easy Recipes for Breakfast",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec augue enim. Nullam venenatis, mi nec commodo dignissim, ipsum ex sodales lacus, sed tempor nunc eros eget massa. Nam malesuada lectus id tortor ultrices, eget fringilla neque consectetur. Sed at bibendum turpis. Donec pulvinar auctor arcu, nec suscipit sem."
+  },
+  {
+    "id": 5,
+    "author": "Mike Johnson",
+    "category": "Sports",
+    "title": "How to Improve Your Tennis Skills",
+    "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nec augue enim. Nullam venenatis, mi nec commodo dignissim, ipsum ex sodales lacus, sed tempor nunc eros eget massa. Nam malesuada lectus id tortor ultrices, eget fringilla neque consectetur. Sed at bibendum turpis. Donec pulvinar auctor arcu, nec suscipit sem."
+  }
+]

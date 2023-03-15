@@ -1,0 +1,106 @@
+const user = {
+  theName: "Osama",
+  theAge: 39,
+  theTitle: "Developer",
+  theCountry: "Egypt",
+  theColor: "Black",
+  //nested object
+  skills: {
+    html: 70,
+    css: 80,
+  },
+};
+
+const {
+  theName: n,
+  theAge: a,
+  theCountry,
+  theColor: co = "Red",
+  //if we want a variable from the nested obj we do like [...[]] it's Nobj:{}
+  skills: { html: h, css },
+} = user;
+
+console.log(n);
+console.log(a);
+console.log(theCountry);
+console.log(co);
+console.log(`My HTML Skill Progress Is ${h}`);
+console.log(`My CSS Skill Progress Is ${css}`);
+
+
+/* leet code 
+// complet this using just unique numbers
+var threeSum = function (nums) {
+  let bigT = [];
+  let first = false;
+  let counter = 0;
+  nullTable = [0, 0, 0];
+  let newT;
+  // nums.sort((a, b) => a - b);
+  // pStart1 = nums.findIndex((e) => e >= 0);
+  numstest = [...new Set(nums)].sort((a, b) => a - b);
+  pStart = numstest.findIndex((e) => e >= 0);
+  each = [-1, 0, 1];
+  compare = function () {
+    let vrai = true;
+    for (let i = 0; i < 3; i++) {
+      if (each[i] != numstest[i] || numstest[pStart + i] != 0) return !vrai;
+    }
+    return vrai;
+  };
+  // console.log(numstest);
+  // if (
+  //   nums.length > 3 &&
+  //   numstest == 3 &&
+  //   numstest.every((e) => {
+  //     if (e == 1 || e == -1 || e == 0) return true;
+  //   })
+  // )
+  if (compare()) {
+    return [
+      [-1, 0, 1],
+      [0, 0, 0],
+    ];
+  }
+  // console.log(nums);
+
+  // nums.forEach(function (n, i, arr)
+  for (let i = 0; i < numstest.length - 2; i++) {
+    if (numstest[i] > 0 || (numstest[i] == 0 && i == 3 && numstest[3] == 0)) {
+      return bigT;
+    }
+    // for(let j=i+1;j<nums.length-1;j++)
+    nested: for (let j = i + 1; j < numstest.length - 1; j++) {
+      if (numstest[j] + numstest[i] > 0) continue nested;
+      // arr.forEach(function (r, p)
+      let p = j + 1 > pStart ? j + 1 : pStart;
+      for (p = j + 1; p < numstest.length; p++) {
+        // && i + 2 + p != i + 1 + j
+        if (numstest[i] + numstest[j] + numstest[p] == 0) {
+          newT = [numstest[i], numstest[j], numstest[p]];
+          let tt = newT.every((e) => e == 0);
+          let test = false;
+          for (let i = 0; i < bigT.length; i++) {
+            if (
+              bigT[i].includes(newT[0]) &&
+              bigT[i].includes(newT[1]) &&
+              bigT[i].includes(newT[2]) &&
+              !tt
+            ) {
+              test = true;
+              break;
+            }
+          }
+          if (test == false && !tt) bigT.push(newT);
+          else if (tt && first == false) {
+            bigT.push(newT);
+            first = true;
+          }
+        }
+      }
+    }
+  }
+
+  return bigT;
+};
+ */
