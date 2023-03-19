@@ -1,28 +1,52 @@
-{
-  "widget": {
-    "debug": "on",
-    "window": {
-      "title": "Sample Konfabulator Widget",
-      "name": "main_window",
-      "width": 500,
-      "height": 500
-    },
-    "image": {
-      "src": "Images/Sun.png",
-      "name": "sun1",
-      "hOffset": 250,
-      "vOffset": 250,
-      "alignment": "center"
-    },
-    "text": {
-      "data": "Click Here",
-      "size": 36,
-      "style": "bold",
-      "name": "text1",
-      "hOffset": 250,
-      "vOffset": 100,
-      "alignment": "center",
-      "onMouseUp": "sun1.opacity = (sun1.opacity / 100) * 90;"
-    }
+[
+  {
+    "userId": 10,
+    "title": "Article Title Number 1",
+    "description": "Article Description Number 1"
+  },
+  {
+    "userId": 5,
+    "title": "Article Title Number 2",
+    "description": "Article Description Number 2"
+  },
+  {
+    "userId": 5,
+    "title": "Article Title Number 3",
+    "description": "Article Description Number 3"
+  },
+  {
+    "userId": 5,
+    "title": "Article Title Number 4",
+    "description": "Article Description Number 4"
+  },
+  {
+    "userId": 5,
+    "title": "Article Title Number 5",
+    "description": "Article Description Number 5"
+  },
+  {
+    "userId": 5,
+    "title": "Article Title Number 6",
+    "description": "Article Description Number 6"
+  },
+  {
+    "userId": 25,
+    "title": "Article Title Number 7",
+    "description": "Article Description Number 7"
+  },
+  {
+    "userId": 25,
+    "title": "Article Title Number 8",
+    "description": "Article Description Number 8"
+  },
+  {
+    "userId": 15,
+    "title": "Article Title Number 9",
+    "description": "Article Description Number 9"
+  },
+  {
+    "userId": 15,
+    "title": "Article Title Number 10",
+    "description": "Article Description Number 10"
   }
-}
+]

@@ -114,6 +114,16 @@ myPromise.then(resolver, rejecter);
   Finally => Promise Successfull Or Failed Finally Do Something
 */
 
+/*The then method of a Promise object accepts two parameters:
+
+The first parameter is a function that will be executed if the Promise is resolved successfully, 
+with the resolved value passed as the argument to the function.
+
+The second parameter is an optional function that will be executed if the Promise is rejected, 
+with the rejection reason passed as the argument to the function.
+
+Both functions return a new Promise object, which allows for chaining multiple then methods together. */
+
 {
   const myPromise = new Promise((resolveFunction, rejectFunction) => {
     let employees = [];
@@ -193,7 +203,7 @@ getData("https://api.github.com/users/elzerowebschool/repos")
 fetch("https://api.github.com/users/elzerowebschool/repos")
   .then((result) => {
     console.log(result);
-    let myData = result.json(); // returna promise
+    let myData = result.json(); // return a promise
     console.log(myData);
     return myData;
   })
@@ -207,3 +217,170 @@ fetch("https://api.github.com/users/elzerowebschool/repos")
   .catch((error) => {
     console.log("Error:", error);
   });
+
+//   ##########################################################################################################
+
+/*
+  Promise
+  - All : if all the promises are fulfilled it return a table of the returned values , rejected when meeting the 1st rejected
+  - All Settled : return a table of object of all promises [{status:.. value}] even if some of them rejected 
+  - Race: return the value of the first promise executed
+*/
+
+const myFirstPromise = new Promise((res, rej) => {
+  setTimeout(() => {
+    res("Iam The First Promise");
+  }, 5000);
+});
+
+const mySecondPromise = new Promise((res, rej) => {
+  setTimeout(() => {
+    rej("Iam The Second Promise");
+  }, 1000);
+});
+
+const myThirdPromise = new Promise((res, rej) => {
+  setTimeout(() => {
+    res("Iam The Third Promise");
+  }, 2000);
+});
+
+Promise.all([myFirstPromise, mySecondPromise, myThirdPromise]).then(
+  (resolvedValues) => console.log(resolvedValues),
+  (rejectedValue) => console.log(`Rejected: ${rejectedValue}`)
+);
+
+Promise.allSettled([myFirstPromise, mySecondPromise, myThirdPromise]).then(
+  (resolvedValues) => console.log(resolvedValues),
+  (rejectedValue) => console.log(`Rejected: ${rejectedValue}`)
+);
+
+Promise.race([myFirstPromise, mySecondPromise, myThirdPromise]).then(
+  (resolvedValues) => console.log(resolvedValues),
+  (rejectedValue) => console.log(`Rejected: ${rejectedValue}`)
+);
+// ######################################################################################################
+
+/*
+  Async
+  - Async Before Function Mean This Function Return A Promise
+  - Async And Await Help In Creating Asynchronous Promise Behavior With Cleaner Style
+*/
+
+// function getData() {
+//   return new Promise((res, rej) => {
+//     let users = [];
+//     if (users.length > 0) {
+//       res("Users Found");
+//     } else {
+//       rej("No Users Found");
+//     }
+//   });
+// }
+
+// getData().then(
+//   (resolvedValue) => console.log(resolvedValue),
+//   (rejectedValue) => console.log("Rejected " + rejectedValue)
+// );
+
+// we can use promises like this in a clean way
+function getData() {
+  let users = ["Osama"];
+  if (users.length > 0) {
+    return Promise.resolve("Users Found");
+  } else {
+    return Promise.reject("No Users Found");
+  }
+}
+
+/* or we can use promises like this in a clean way just by 
+adding async this will make the function returns a promise (but async not identical with promise) */
+async function getData() {
+  let users = [];
+  if (users.length > 0) {
+    return "Users Found";
+  } else {
+    throw new Error("No Users Found");
+  }
+}
+
+console.log(getData());
+
+getData().then(
+  (resolvedValue) => console.log(resolvedValue),
+  (rejectedValue) => console.log("Rejected " + rejectedValue)
+);
+
+/*
+  Await
+  - Await Works Only Inside Asnyc Functions
+  - Await Make JavaScript code after it  Wait For The Promise Result
+  - Await Is More Elegant Syntax Of Getting Promise Result
+  
+  *Wait for a Promise to resolve or reject before executing the next line of code.
+  *Capture the resolved value of a Promise and use it in the next line of code.
+  *Capture any errors that occur during Promise execution and handle them in a catch block.
+  *Chain multiple asynchronous operations in a more readable and sequential manner.
+*/
+
+{
+  const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // resolve("Iam The Good Promise");
+      reject(Error("Iam The Bad Promise"));
+    }, 3000);
+  });
+
+  async function readData() {
+    console.log("Before Promise");
+    // myPromise.then((resolvedValue) => console.log(resolvedValue));
+    // console.log(await myPromise);
+    console.log(await myPromise.catch((err) => err));
+    console.log("After Promise");
+  }
+
+  readData();
+}
+
+{
+  /*
+  Async & Await With Try, Catch, Finally
+*/
+
+  const myPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Iam The Good Promise");
+    }, 3000);
+  });
+
+  // async function readData() {
+  //   console.log("Before Promise");
+  //   try {
+  //     console.log(await myPromise);
+  //   } catch (reason) {
+  //     console.log(`Reason: ${reason}`);
+  //   } finally {
+  //     console.log("After Promise");
+  //   }
+  // }
+
+  // readData();
+
+  // "https://api.github.com/users/elzerowebschool/repos"
+
+  async function fetchData() {
+    console.log("Before Fetch");
+    try {
+      let myData = await fetch(
+        "https://api.github.com/users/elzerowebschool/repos"
+      );
+      console.log(await myData.json());
+    } catch (reason) {
+      console.log(`Reason: ${reason}`);
+    } finally {
+      console.log("After Fetch");
+    }
+  }
+
+  fetchData();
+}
